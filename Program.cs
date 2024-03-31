@@ -1,42 +1,42 @@
-﻿// Семинар урок 7 аттестация
+// ﻿// Семинар урок 7 аттестация
 
-// Задача 1: Задайте значения M и N. Напишите программу, которая выведет все натуральные числа в промежутке от M до N. 
-// Использовать рекурсию, не использовать циклы.
+// // Задача 1: Задайте значения M и N. Напишите программу, которая выведет все натуральные числа в промежутке от M до N. 
+// // Использовать рекурсию, не использовать циклы.
 
-using System;
+// using System;
 
-class Program
-{
-    static void PrintNumbers(int m, int n)
-    {
-        if (m == n)
-        {
-            Console.Write(n); // Выводим последнее число диапазона
-        }
-        else if (m < n)
-        {
-            Console.Write(m + ", "); // Выводим текущее число и запятую
-            PrintNumbers(m + 1, n); // Рекурсивный вызов с увеличением m
-        }
-        else // m > n
-        {
-            Console.Write(m + ", "); // Выводим текущее число и запятую
-            PrintNumbers(m - 1, n); // Рекурсивный вызов с уменьшением m
-        }
-    }
-
-    static void Main()
-    {
-        Console.Write("Введите значение M: ");
-        int m = Convert.ToInt32(Console.ReadLine()); // Считываем значение M
-        Console.Write("Введите значение N: ");
-        int n = Convert.ToInt32(Console.ReadLine()); // Считываем значение N
-
-        Console.WriteLine($"Натуральные числа в промежутке от {m} до {n}:");
-        PrintNumbers(m, n); // Вызываем функцию для печати чисел
-        Console.WriteLine();
-    }
-}
+// class Program
+// {
+//     static void PrintNumbers(int m, int n)
+//     {
+//         if (m == n)
+//         {
+//             Console.Write(n); // Выводим последнее число диапазона
+ //        }
+//         else if (m < n)
+//         {
+//             Console.Write(m + ", "); // Выводим текущее число и запятую
+//             PrintNumbers(m + 1, n); // Рекурсивный вызов с увеличением m
+//         }
+//         else // m > n
+//         {
+//             Console.Write(m + ", "); // Выводим текущее число и запятую
+//             PrintNumbers(m - 1, n); // Рекурсивный вызов с уменьшением m
+//         }
+//     }
+//
+//     static void Main()
+//     {
+//         Console.Write("Введите значение M: ");
+//         int m = Convert.ToInt32(Console.ReadLine()); // Считываем значение M
+//         Console.Write("Введите значение N: ");
+//         int n = Convert.ToInt32(Console.ReadLine()); // Считываем значение N
+// 
+//         Console.WriteLine($"Натуральные числа в промежутке от {m} до {n}:");
+//         PrintNumbers(m, n); // Вызываем функцию для печати чисел
+//         Console.WriteLine();
+ //    }
+// }
 
 // // Задача 2: Напишите программу вычисления функции Аккермана с помощью рекурсии. 
 // // Даны два неотрицательных числа m и n
