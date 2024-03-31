@@ -85,40 +85,46 @@ class Program
 // // Задача 3: Задайте произвольный массив. Выведете его элементы, начиная с конца. 
 // // Использовать рекурсию, не использовать циклы.
 
-// using System;
+using System;
 
-// class Program
-// {
-//     static void ReversePrint(int[] arr, int index)
-//     {
-//         if (index >= 0)
-//         {
-//             Console.Write(arr[index]+" ");
-//             ReversePrint(arr, index - 1);
-//         }
-//     }
+class Program
+{
+    static Random random = new Random();
 
-//     static void Main(string[] args)
-//     {
-//         // Произвольный массив
-//         Console.Write("Введите размер массива: ");
-//         int size = int.Parse(Console.ReadLine());
-//         int[] array = new int[size];
-//         Random random = new Random();
-//         int primeCount = 0;
+    // Метод для рекурсивного заполнения массива случайными числами
+    static void FillArrayRecursively(int[] array, int index)
+    {
+        if (index < array.Length)
+        {
+            array[index] = random.Next(100); // Заполняем массив случайными числами до 100
+            Console.Write(array[index] + " "); // Печатаем элемент сразу после его заполнения
+            FillArrayRecursively(array, index + 1);
+        }
+    }
 
-//         Console.Write("Сгенерированный массив: ");
-//         for (int i = 0; i < array.Length; i++)
-//         {
-//             array[i] = random.Next(1, 100); // Случайное число от 1 до 99
-//             Console.Write(array[i] + " ");
-//         }
-//         System.Console.WriteLine();
-//         Console.Write("Перевернутый массив: ");
-//         // Вызываем функцию,
-//         // Этот код выводит элементы массива array
-//         ReversePrint(array, array.Length - 1);
-//         System.Console.WriteLine();
-//     }
+    // Метод для рекурсивной печати элементов массива в обратном порядке
+    static void ReversePrint(int[] arr, int index)
+    {
+        if (index >= 0)
+        {
+            Console.Write(arr[index] + " ");
+            ReversePrint(arr, index - 1);
+        }
+    }
 
-// }
+    static void Main()
+    {
+        // Запрос размера массива у пользователя
+        Console.Write("Введите размер массива: ");
+        int size = int.Parse(Console.ReadLine());
+        int[] myArray = new int[size];
+
+        Console.Write("Сгенерированный массив: ");
+        FillArrayRecursively(myArray, 0);
+        Console.WriteLine(); // Переход на новую строку после печати массива
+
+        Console.Write("Перевернутый массив: ");
+        ReversePrint(myArray, myArray.Length - 1);
+        Console.WriteLine(); // Переход на новую строку после печати массива
+    }
+}
